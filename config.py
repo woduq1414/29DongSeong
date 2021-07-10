@@ -18,11 +18,13 @@ if socket.gethostname()[:7] == "DESKTOP":
     config = configparser.ConfigParser()
     config.read('config.ini')
 
-    pg_db_username = config['DEFAULT']['LOCAL_DB_USERNAME']
-    pg_db_password = config['DEFAULT']['LOCAL_DB_PASSWORD']
-    pg_db_name = config['DEFAULT']['LOCAL_DB_NAME']
-    pg_db_hostname = config['DEFAULT']['LOCAL_DB_HOSTNAME']
+    # pg_db_username = config['DEFAULT']['LOCAL_DB_USERNAME']
+    # pg_db_password = config['DEFAULT']['LOCAL_DB_PASSWORD']
+    # pg_db_name = config['DEFAULT']['LOCAL_DB_NAME']
+    # pg_db_hostname = config['DEFAULT']['LOCAL_DB_HOSTNAME']
 
+
+    DATABASE_URL = config["DEFAULT"]["DATABASE_URL"]
 
 
     SECRET_KEY = config['DEFAULT']['SECRET_KEY']
@@ -42,9 +44,11 @@ if socket.gethostname()[:7] == "DESKTOP":
 else:
 
 
+    DATABASE_URL =  os.environ.get("DATABASE_URL")
+
     SECRET_KEY = os.environ.get('SECRET_KEY', None)
-    print(os.environ.get('GOOGLE_CREDENTIALS', None))
-    print(json.loads(os.environ.get('GOOGLE_CREDENTIALS', None)))
+    # print(os.environ.get('GOOGLE_CREDENTIALS', None))
+    # print(json.loads(os.environ.get('GOOGLE_CREDENTIALS', None)))
     # credentials = ServiceAccountCredentials.from_json_keyfile_dict(
     #     json.loads(os.environ.get('GOOGLE_CREDENTIALS', None)), scope)
 

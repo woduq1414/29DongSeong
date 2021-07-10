@@ -1,0 +1,90 @@
+#title {
+    margin: 1rem 0 0 0;
+    font-size: 7.5rem;
+    text-align: center;
+    z-index: 500;
+}
+
+#titleDescription {
+    margin: 0rem 0;
+    font-size: 4rem;
+    z-index: 500;
+}
+
+#container {
+    margin: 1rem 1rem;
+
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: space-between;
+    z-index: 5;
+
+}
+
+
+#cloud {
+    z-index: -1;
+
+
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    transform: translate(-100%, -100%);
+    border-radius: 50%;
+    filter: url(#filter);
+}
+
+
+.contentWrapper {
+    z-index: 500;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#leftContainer {
+    z-index: 500;
+    width: 300px;
+    flex-shrink: 0;
+
+    margin: 1rem 2.5rem 1rem 1rem ;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#rightContainer {
+    z-index: 500;
+    flex-grow: 1;
+    margin-right: 3rem;
+}
+
+.indexTitle {
+    font-size: 1.0rem;
+    cursor: pointer;
+
+}
+
+
+.activeIndexTitle{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.indexSubtitle {
+    font-size: 1.0rem;
+    text-indent: 1rem;
+    cursor: pointer;
+}
+
+.indexWrapper {
+    border-bottom: 0.4px solid black;
+     margin-bottom: 1.2rem;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+
+
+}
+
+#container {
+    width: 100%;
+}

@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/stylesheets/document_page.css">
+    <link rel="stylesheet" href="/static/stylesheets/document.css">
+{% endblock %}
+
+{% block content %}
+    <div id="cloud"></div>
+
+    <svg width="0" height="0">
+        <filter id="filter">
+            <feTurbulence type="fractalNoise"
+                          baseFrequency=".01" numOctaves="10"/>
+            <feDisplacementMap
+                    in="SourceGraphic" scale="240"/>
+        </filter>
+    </svg>
+
+
+
+    <div id="container">
+        <div id="leftContainer">
+            <div id="indexContainer">
+                {% for title in title_list %}
+                    <div class="indexWrapper">
+                        <div class="indexTitle {{ "activeIndexTitle" if title.seq == doc_seq else "" }}" onclick="location.href='/docs/{{ title.seq }}'">
+                            {{ title.title }}
+
+                        </div>
+                        {% if title.seq == doc_seq %}
+                            {% for subtitle in subtitle_list %}
+                                <div class="indexSubtitle" onclick="goToByScroll({{ loop.index0  }})">
+                                    {{ subtitle }}
+
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="rightContainer">
+            {{ doc_html | safe }}
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+{% block script %}
+    <script>
+        function goToByScroll(seq) {
+            $('html,body').animate({
+                scrollTop: $(`.subtitle:eq(${seq})`).offset().top
+            }, 'fast');
+        }
+
+        AOS.init()
+
+        function rn(from, to) {
+            let a = ~~(Math.random() * (to - from + 1)) + from;
+            {#console.log(a)#}
+            return a;
+        }
+
+        function rs() {
+            return arguments[rn(1, arguments.length) - 1];
+        }
+
+        function boxShadows(max) {
+            let ret = [];
+            for (let i = 0; i < max; ++i) {
+                {#            ret.push(`#}
+                {#  ${rn(1, 100)}vw ${rn(1, 100)}vh ${rn(20, 40)}vmin ${rn(1, 20)}vmin#}
+                {#  ${rs('#11cbd7', '#c6f1e7', '#f0fff3', '#fa4659')}#}
+                {#`)#}
+                ret.push(`
+      ${rn(1, 100)}vw ${rn(1, 300)}vh ${rn(20, 40)}vmin ${rn(1, 20)}vmin
+      ${rs('#d7cfd5', '#e7e1e4', '#dbe9de', '#fef5f7')}
+    `)
+
+
+            }
+            return ret.join(',');
+        }
+
+        const cloud = document.querySelector('#cloud');
+
+        function update() {
+            cloud.style.boxShadow = boxShadows(250);
+        }
+
+        window.addEventListener('load', update);
+
+        $(document).ready(function () {
+            {#updateGreyBox();#}
+            {#alert("DF")#}
+        });
+
+        $(window).resize(function () {
+            {#updateGreyBox();#}
+        });
+
+
+        {#document.addEventListener('click', update);#}
+
+    </script>
+{% endblock %}

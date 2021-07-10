@@ -15,16 +15,17 @@
     <script src="https://unpkg.com/cropperjs"></script>
     <link href="/static/stylesheets/layout.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/paste.js/0.0.18/paste.min.js"#}
-{#            integrity="sha512-Rrl4RMar4C0aKtkB91vFvdkbKRJU4rbuWSxMHaQ/OUMpciWQ67EdL/jltGhhRmx7bZRKO/OhfXUgO2m5rejpxg=="#}
-{#            crossorigin="anonymous"></script>#}
-{#    <script src="https://cdn.socket.io/3.1.3/socket.io.js"></script>#}
+    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/paste.js/0.0.18/paste.min.js"#}
+    {#            integrity="sha512-Rrl4RMar4C0aKtkB91vFvdkbKRJU4rbuWSxMHaQ/OUMpciWQ67EdL/jltGhhRmx7bZRKO/OhfXUgO2m5rejpxg=="#}
+    {#            crossorigin="anonymous"></script>#}
+    {#    <script src="https://cdn.socket.io/3.1.3/socket.io.js"></script>#}
 
     {% block style %}
     {% endblock %}
@@ -38,7 +39,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarContent">
             <div id="navLeft">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img src="/static/images/logo.png" id="navLogoImage">
 
                 </a>
@@ -49,7 +50,7 @@
                         <a class="nav-link" href="/">서비스 소개</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/docs">개념 학습</a>
+                        <a class="nav-link" href="/docs/1">개념 학습</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/quiz">연습 퀴즈</a>
@@ -60,8 +61,6 @@
 
                 </ul>
             </div>
-
-
 
 
         </div>

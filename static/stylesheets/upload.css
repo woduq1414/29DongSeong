@@ -135,7 +135,7 @@ html, body {
 }
 
 .indexContent {
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
     flex-grow: 1;
@@ -154,6 +154,34 @@ html, body {
 
 #indexList {
     display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#indexTitleContainer {
+    z-index: 500;
+}
+
+.indexTitleText {
+    font-size: 2rem;
+    margin-right: 2rem;
+}
+
+.uploadFile {
+    font-size: 1.4rem;
+}
+
+.indexTitleWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#indexTitleContainer {
+    width: 80%;
+    display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
