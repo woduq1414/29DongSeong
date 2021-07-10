@@ -9,6 +9,7 @@
     margin: 0rem 0;
     font-size: 4rem;
     z-index: 500;
+    text-align: center;
 }
 
 #container {
@@ -108,7 +109,7 @@ html, body {
 
 #indexContainer {
     z-index: 500;
-    margin: 6rem 0 5rem 0;
+    margin: 6rem 0 12rem 0;
     font-family: 'Noto Sans KR', sans-serif;
     width: 80%;
 }
@@ -135,7 +136,7 @@ html, body {
 }
 
 .indexContent {
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
     flex-grow: 1;
@@ -156,4 +157,32 @@ html, body {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+@media (max-width: 991px) {
+    #container {
+        margin: 1rem 0.4rem;
+    }
+
+    #descriptionContainer, #indexContainer {
+        width: 95%;
+    }
+
+}
+
+
+body.dark-mode #description1 {
+    background-color: #343434;
+}
+
+body.dark-mode #indexTitle {
+    background-color: #343434;
+}
+
+body.dark-mode .indexContent {
+    background-color: #343434;
+}
+body.dark-mode .indexGoPage {
+    background-color: #565656;
+    color: whitesmoke;
 }

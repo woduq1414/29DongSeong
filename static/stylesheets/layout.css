@@ -39,7 +39,7 @@ html {
 
 @media all and (max-width: 600px) {
     html {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 
@@ -94,3 +94,34 @@ main {
 
 }
 
+body.dark-mode {
+    background-color: #121212;
+    color: #bbb !important;
+}
+
+#darkModeButtonWrapper {
+    display: flex;
+    align-items: center;
+    padding: 0rem 0.6rem;
+}
+
+#darkModeIcon {
+    font-size: 1.2rem;
+    border-radius: 100px;
+    background-color: whitesmoke;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+body.dark-mode #cloud {
+    display: none;
+}
+body.dark-mode .navbar{
+    background-color: #454545 !important;
+}
+body.dark-mode .nav-link{
+    color: #d3d3d3 !important;
+}
+body.dark-mode #navLogoImage {
+    filter: invert(0.9);
+}

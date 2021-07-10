@@ -16,7 +16,10 @@
                     in="SourceGraphic" scale="240"/>
         </filter>
     </svg>
-
+    <div class="button button--circle button--lg box-shadow-2 sidebar-button js-sidebar-show "
+         id="collapseToggleButton">
+        <i class="fas fa-bars icon--show"></i>
+    </div>
 
 
     <div id="container">
@@ -24,13 +27,14 @@
             <div id="indexContainer">
                 {% for title in title_list %}
                     <div class="indexWrapper">
-                        <div class="indexTitle {{ "activeIndexTitle" if title.seq == doc_seq else "" }}" onclick="location.href='/docs/{{ title.seq }}'">
+                        <div class="indexTitle {{ "activeIndexTitle" if title.seq == doc_seq else "" }}"
+                             onclick="location.href='/docs/{{ title.seq }}'">
                             {{ title.title }}
 
                         </div>
                         {% if title.seq == doc_seq %}
                             {% for subtitle in subtitle_list %}
-                                <div class="indexSubtitle" onclick="goToByScroll({{ loop.index0  }})">
+                                <div class="indexSubtitle" onclick="goToByScroll({{ loop.index0 }})">
                                     {{ subtitle }}
 
                                 </div>
@@ -62,8 +66,8 @@
 {% block script %}
     <script>
         function goToByScroll(seq) {
-            $('html,body').animate({
-                scrollTop: $(`.subtitle:eq(${seq})`).offset().top
+            $('#rightContainer').animate({
+                scrollTop: $(`.subtitle:eq(${seq})`).offset().top - $(`#rightContainer`).offset().top
             }, 'fast');
         }
 
@@ -99,19 +103,52 @@
         const cloud = document.querySelector('#cloud');
 
         function update() {
-            cloud.style.boxShadow = boxShadows(250);
+            {#cloud.style.boxShadow = boxShadows(40);#}
         }
 
         window.addEventListener('load', update);
 
+        let isLeftContainerOpen = false;
+
         $(document).ready(function () {
             {#updateGreyBox();#}
             {#alert("DF")#}
+
+
+            if (window.matchMedia("(max-width: 991px)").matches) {
+                isLeftContainerOpen = true;
+
+            } else {
+                isLeftContainerOpen = false;
+                /* 뷰포트 너비가 400 픽셀 미만 */
+            }
+
+            toggleCollapse()
         });
+
 
         $(window).resize(function () {
             {#updateGreyBox();#}
+
         });
+
+        function toggleCollapse() {
+            isLeftContainerOpen = !isLeftContainerOpen;
+
+            if (isLeftContainerOpen) {
+
+                $("#leftContainer").css("display", "flex")
+            } else {
+                $("#leftContainer").css("display", "none")
+            }
+
+        }
+
+        $("#collapseToggleButton").on("click", function () {
+            toggleCollapse();
+        });
+
+
 
 
         {#document.addEventListener('click', update);#}

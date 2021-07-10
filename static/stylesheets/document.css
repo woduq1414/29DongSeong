@@ -75,3 +75,18 @@ p {
     display: flex;
     justify-content: center;
 }
+
+body.dark-mode .secret {
+    color: #343434;
+}
+
+body.dark-mode .bluebox {
+    background-color: #343434;
+    border: 2px solid #6a97f3;
+
+}
+body.dark-mode .skincolorbox {
+    background-color: #343434;
+    border: 2px solid #f3c570;
+
+}
