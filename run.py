@@ -24,7 +24,7 @@ class Docs(BaseModel):
     html: str
 
 
-database = databases.Database(DATABASE_URL)
+database = databases.Database(DATABASE_URL.replace("postgres://", "postgresql://"))
 
 metadata = sqlalchemy.MetaData()
 
