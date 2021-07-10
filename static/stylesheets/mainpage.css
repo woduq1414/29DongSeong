@@ -1,0 +1,159 @@
+#title {
+    margin: 1rem 0 0 0;
+    font-size: 7.5rem;
+    text-align: center;
+    z-index: 500;
+}
+
+#titleDescription {
+    margin: 0rem 0;
+    font-size: 4rem;
+    z-index: 500;
+}
+
+#container {
+    margin: 1rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+
+}
+
+#exampleImageContainer {
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 500;
+    /*wrap*/
+}
+
+
+.exampleImage {
+    width: 27%;
+    box-shadow: 0px 0px 8px -5px rgba(0, 0, 0, 0.3);
+    z-index: 500;
+    max-height: 25%;
+    transition: all 0.5s;
+}
+
+.exampleImage:hover {
+    width: 31%;
+
+}
+
+
+.backgroundGrey {
+    background-color: grey;
+    /*position: fixed;*/
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    z-index: 300;
+}
+
+
+/*  background */
+
+html, body {
+    margin: 0;
+}
+
+/*body:after {*/
+/*  font-size: .8em;*/
+/*  color: rgba(0, 0, 0, .3);*/
+/*  position: fixed;*/
+/*  width: 100%;*/
+/*  bottom: 1em;*/
+/*  text-align: center;*/
+/*}*/
+
+#cloud {
+    z-index: -1;
+
+
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    transform: translate(-100%, -100%);
+    border-radius: 50%;
+    filter: url(#filter);
+}
+
+
+#descriptionContainer {
+    z-index: 500;
+    margin: 10rem 0 2rem 0;
+    font-family: 'Nanum Gothic', sans-serif;
+    width: 80%;
+}
+
+#description1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: lightgrey;
+    border-radius: 0.5rem;
+    padding: 0.4rem 0;
+
+}
+
+
+#description2 {
+    font-size: 1.7rem;
+    line-height: 3rem;
+    text-align: center;
+}
+
+#indexContainer {
+    z-index: 500;
+    margin: 6rem 0 5rem 0;
+    font-family: 'Nanum Gothic', sans-serif;
+    width: 80%;
+}
+
+#indexTitle {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: lightgrey;
+    border-radius: 0.5rem;
+    padding: 0.4rem 0;
+
+}
+
+.index {
+
+
+    width: 90%;
+    display: flex;
+    margin: 0.5rem;
+
+    align-items: center;
+}
+
+.indexContent {
+    background-color: rgba(255,255,255,0.5);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    flex-grow: 1;
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+
+.indexGoPage {
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    font-size: 1.6rem;
+    background-color: lightgrey;
+    flex-shrink: 0;
+    padding: 1rem;
+}
+
+#indexList {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

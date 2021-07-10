@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/stylesheets/mainpage.css">
+{% endblock %}
+
+{% block content %}
+    <div id="cloud"></div>
+
+    <svg width="0" height="0">
+        <filter id="filter">
+            <feTurbulence type="fractalNoise"
+                          baseFrequency=".01" numOctaves="10"/>
+            <feDisplacementMap
+                    in="SourceGraphic" scale="240"/>
+        </filter>
+    </svg>
+
+    <div class="backgroundGrey">
+
+    </div>
+
+
+    <div id="container">
+        <div id="title" data-aos="fade-up">29동성 :</div>
+        <div id="titleDescription" data-aos="fade-up">29번 문제들은 언제나 같은 목소리를 내고 있다</div>
+
+
+        <div id="exampleImageContainer">
+
+            <img class="exampleImage" src="/static/images/April.png">
+
+
+            <img class="exampleImage" src="/static/images/June.png">
+
+            <img class="exampleImage" src="/static/images/July.png">
+
+        </div>
+
+
+        <div id="descriptionContainer">
+            <div id="description1" data-aos="fade-up">
+                29번 문제들은 언제나 같은 목소리를 내고 있다
+            </div>
+
+            <div id="description2">
+                <p data-aos="fade-up">문법은 우리의 발목을 잡기도 하고 손목을 잡기도 합니다.</p>
+                <p data-aos="fade-up">하지만 그것은 달콤한 사랑고백이 아닌 끔찍한 물귀신 작전입니다.</p>
+                <p data-aos="fade-up">절대 문법에 속아도 안되지만, 오히려 그들은 매번 일관된 모습을 보여주고 있습니다.</p>
+                <p data-aos="fade-up">그들의 목소리에 귀기울이기만 한다면, 여러분은 절데 29번의 늪에는</p>
+                <p data-aos="fade-up">빠지지 않을 수 있을 것입니다. 저희가 도와드리겠습니다.</p>
+                <p data-aos="fade-up">29동성을 통해 29번들의 목소리에 귀울인다면,</p>
+                <p data-aos="fade-up">공포의 29번도 다시 보니 천사같을 것입니다.</p>
+                <p data-aos="fade-up">믿음이 팍팍 생기지 않습니까? 그럼 시작해 봅시다. 박수 세 번 시작</p>
+            </div>
+        </div>
+
+        <div id="indexContainer">
+            <div id="indexTitle" data-aos="fade-up">
+                목차
+            </div>
+
+            <div id="indexList">
+                <div class="index" data-aos="fade-right">
+                    <div class="indexContent">
+                        1. 공부방법
+                    </div>
+                    <div class="indexGoPage">
+                        ->
+                    </div>
+                </div>
+                <div class="index" data-aos="fade-right">
+                    <div class="indexContent">
+                        2. 안유성이 되는 방법
+                    </div>
+                    <div class="indexGoPage">
+                        ->
+                    </div>
+                </div>
+                <div class="index" data-aos="fade-right">
+                    <div class="indexContent">
+                        3. 제 인생은 어떡하죠?
+                    </div>
+                    <div class="indexGoPage">
+                        ->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+{% block script %}
+    <script>
+
+        AOS.init()
+
+        function rn(from, to) {
+            let a = ~~(Math.random() * (to - from + 1)) + from;
+            {#console.log(a)#}
+            return a;
+        }
+
+        function rs() {
+            return arguments[rn(1, arguments.length) - 1];
+        }
+
+        function boxShadows(max) {
+            let ret = [];
+            for (let i = 0; i < max; ++i) {
+                {#            ret.push(`#}
+                {#  ${rn(1, 100)}vw ${rn(1, 100)}vh ${rn(20, 40)}vmin ${rn(1, 20)}vmin#}
+                {#  ${rs('#11cbd7', '#c6f1e7', '#f0fff3', '#fa4659')}#}
+                {#`)#}
+                ret.push(`
+      ${rn(1, 100)}vw ${rn(1, 300)}vh ${rn(20, 40)}vmin ${rn(1, 20)}vmin
+      ${rs('#d7cfd5', '#e7e1e4', '#dbe9de', '#fef5f7')}
+    `)
+
+
+            }
+            return ret.join(',');
+        }
+
+        const cloud = document.querySelector('#cloud');
+
+        function update() {
+            cloud.style.boxShadow = boxShadows(250);
+        }
+
+        window.addEventListener('load', update);
+
+        $(document).ready(function () {
+            updateGreyBox();
+            {#alert("DF")#}
+        });
+
+        $(window).resize(function () {
+            updateGreyBox();
+        });
+
+
+        function updateGreyBox() {
+            $(".backgroundGrey").css("top", ($("#exampleImageContainer").offset().top + $("#exampleImageContainer").height() / 2.3) + "px");
+            $(".backgroundGrey").css("height", ($("#exampleImageContainer").height() * 0.8) + "px");
+        }
+
+
+        {#document.addEventListener('click', update);#}
+
+    </script>
+{% endblock %}
