@@ -117,7 +117,7 @@ body.dark-mode #cloud {
     display: none;
 }
 body.dark-mode .navbar{
-    background-color: #454545 !important;
+    background-color: #333333 !important;
 }
 body.dark-mode .nav-link{
     color: #d3d3d3 !important;

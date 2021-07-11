@@ -23,7 +23,7 @@ class Docs(BaseModel):
     index: str
     html: str
 
-print(DATABASE_URL)
+# print(DATABASE_URL)
 database = databases.Database(DATABASE_URL)
 
 metadata = sqlalchemy.MetaData()
@@ -62,6 +62,12 @@ async def shutdown():
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+
+@app.get("/word-quiz", response_class=HTMLResponse)
+async def word_quiz(request: Request):
+    return templates.TemplateResponse("./react-build/wordquiz.html", {"request": request})
+
 
 
 @app.get("/docs/{doc_seq}", response_class=HTMLResponse)
