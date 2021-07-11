@@ -1,18 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <link rel="icon" href="/favicon.ico"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="theme-color" content="#000000"/>
-    <meta name="description" content="Web site created using create-react-app"/>
-    <link rel="apple-touch-icon" href="/logo192.png"/>
-    <link rel="manifest" href="/manifest.json"/>
-    <title>React App</title>
-    <link href="/static/stylesheets/react-build/main.6dea0f05.chunk.css" rel="stylesheet">
-</head>
-<body>
-<noscript>You need to enable JavaScript to run this app.</noscript>
+{% extends "layout.html" %}
+
+{% block style %}
+     <link href="/static/stylesheets/react-build/main.6dea0f05.chunk.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
 <div id="root"></div>
 <script>!function (e) {
     function r(r) {
@@ -105,5 +96,5 @@
 }([])</script>
 <script src="/static/js/react-build/2.daa6d0dc.chunk.js"></script>
 <script src="/static/js/react-build/main.f783d92f.chunk.js"></script>
-</body>
-</html>
+
+{% endblock %}

@@ -142,10 +142,17 @@ async def upload_docs(background_tasks: BackgroundTasks, file: bytes = File(...)
         image_list = soup.find_all("img")
         for image in image_list:
             src = image.attrs["src"]
-            print(src)
+
             img_fname = src.split("/")[-1]
-            if img_fname in image_file_name_list:
-                img_binary = zip_file.open(img_fname).read()
+            print(img_fname)
+
+            flag = False
+            for fn in image_file_name_list:
+                if img_fname == fn.split("/")[-1]:
+                    flag = True
+                    break
+            if flag is True:
+                img_binary = zip_file.open(fn).read()
                 # print(img_binary)
                 encoded_string = base64.b64encode(img_binary).decode("utf8")
                 base64_str = f"data:image/png;base64,{encoded_string}"
