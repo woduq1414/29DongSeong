@@ -125,3 +125,13 @@ body.dark-mode .nav-link{
 body.dark-mode #navLogoImage {
     filter: invert(0.9);
 }
+
+footer {
+    font-size: 1.7rem;
+    background-color: whitesmoke;
+    text-align: center;
+    z-index: 500;
+    width: 80%;
+    border-radius: 1rem;
+    margin-bottom: 0.6rem;
+}

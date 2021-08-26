@@ -37,7 +37,7 @@
 
 #indexContainer {
      overflow-y: auto;
-        height: calc(100% - 3rem);
+    height: calc(100% - 3rem);
     padding-right: 0.4rem;
 }
 
@@ -54,7 +54,7 @@
     margin: 1rem 2.5rem 1rem 1rem;
     font-family: 'Noto Sans KR', sans-serif;
 
-
+    flex-direction: column;
 
 }
 
@@ -147,3 +147,9 @@ body {
     margin: 0 auto;
 }
 
+
+footer {
+    margin-top: 1.0rem;
+    font-size: 0.7rem;
+    width: 100%;
+}
